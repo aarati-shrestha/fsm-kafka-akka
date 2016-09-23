@@ -66,6 +66,7 @@ public class FiniteStateMachineConsumerActor extends UntypedActor {
 		            String newString = new String(it.next().message());
 		            logger.info("newString :: {}",newString);
 		            processMessage(newString);	
+		            consumerConnector.shutdown();
 		            break;
 		        }
 			}				
