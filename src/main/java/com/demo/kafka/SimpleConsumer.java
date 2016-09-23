@@ -36,6 +36,7 @@ public class SimpleConsumer {
 		props.put("zookeeper.session.timeout.ms", "400");
 		props.put("zookeeper.sync.time.ms", "200");
 		props.put("auto.commit.interval.ms", "1000");
+		//props.put("auto.offset.reset","largest");
 
 		return new ConsumerConfig(props);
 	}

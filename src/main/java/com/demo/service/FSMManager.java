@@ -19,20 +19,21 @@ public class FSMManager {
             .actorSelection("akka://AKKASystem/user/fsmactor");
 	ActorSelection fsmConsumerAkka = AkkaFactory.getActorSystem()
             .actorSelection("akka://AKKASystem/user/fsmConsumeractor");
+	
 	public void doSomething(String data){
+		fsmConsumerAkka.tell(fsmBase.getState(), null);
 		if(fsmBase.getState().equals(State.IDLE)){
 			fsmBase.setState(State.ACTIVE);
+			fsmAkka.tell(data, null);
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			fsmConsumerAkka.tell(fsmBase.getState(), null);
 		}
-		fsmAkka.tell(data, null);
-		fsmConsumerAkka.tell(fsmBase.getState(), null);
-		
-		
-		
-		
-		
-		
-		
-		
+						
 	}
 
 }
