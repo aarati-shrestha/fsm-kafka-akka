@@ -88,7 +88,7 @@ public class FiniteStateMachineConsumerActor extends UntypedActor {
 		JSONObject jsonObj = null;
 	    try {
 	       jsonObj =  new JSONObject(test);
-	       if(jsonObj.has("randomId")&& jsonObj.get("randomId").toString().equalsIgnoreCase("12345")){
+	       if(jsonObj.has("requestId")&& jsonObj.get("requestId").toString().equalsIgnoreCase("12345")){
 	    	   return jsonObj;
 	       }
 	    } catch (JSONException ex) {	        
