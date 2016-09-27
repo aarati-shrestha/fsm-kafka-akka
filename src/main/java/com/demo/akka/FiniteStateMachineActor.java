@@ -28,11 +28,7 @@ public class FiniteStateMachineActor extends UntypedActor {
 	
 	@Override
 	public void onReceive(Object msg) throws Exception {
-		kafkaProducer.send(msg.toString());
-		
-		//fsmBase.setState(State.IDLE);
-		
-		
+		kafkaProducer.send(msg.toString());	
 	}
 
 }

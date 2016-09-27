@@ -17,14 +17,7 @@ public class AkkaInitializer {
 				.actorOf(ext.props("finiteStateMachineActor"),"fsmactor");	
 		this.fsmConsumerActor = AkkaFactory.getActorSystem()
 				.actorOf(ext.props("finiteStateMachineConsumerActor"),"fsmConsumeractor");
-		//actorRef.tell("start", null);
-//		try {
-//			Thread.sleep(2000);
-//		} catch (InterruptedException e) {
-//			e.printStackTrace();
-//		}
-//		actorRef.tell("s2", null);
-//		actorRef.tell("s3", null);
+
 		
 	}	
 }

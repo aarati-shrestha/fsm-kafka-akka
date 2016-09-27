@@ -48,7 +48,6 @@ public class FiniteStateMachineConsumerActor extends UntypedActor {
 	@Override
 	public void onReceive(Object msg) throws Exception {
 		if(msg.toString().equals("ACTIVE")){
-			System.out.println("inside active");
 			sc = new SimpleConsumer("localhost:2181", "coregroup");
 	        consumerConnector = sc.getConsumerConnector();
 	        logger.info("Running.....");
