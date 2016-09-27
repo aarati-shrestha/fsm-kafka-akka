@@ -1,4 +1,4 @@
-The application is built using spring framework. It has used the concept of finite state machine, akka and kafka.
+It is spring-boot application. It has used the concept of finite state machine, akka and kafka.
 
 The application has two states:
 	1. IDLE 2. ACTIVE
